@@ -69,14 +69,14 @@
 .footer__link-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 33px;
-  max-width: 60%;
+  gap: 10px 33px;
+  max-width: 65%;
   margin: 0;
   padding: 0;
   list-style-type: none;
 
   @include vp-1023 {
-    gap: 23px;
+    gap: 10px 23px;
     max-width: 70%;
   }
 

@@ -1,6 +1,15 @@
 .header {
   position: relative;
   z-index: 10;
+  min-height: $default-header-height-desktop;
+
+  @include vp-1023 {
+    min-height: $default-header-height-tablet;
+  }
+
+  @include vp-767 {
+    min-height: $default-header-height-mobile;
+  }
 }
 
 .header__container {
@@ -98,7 +107,7 @@
     bottom: 0;
     left: 0;
     display: block;
-    background-color: $color-prussian-blue-50;
+    background-color: $color-prussian-blue--50;
     cursor: pointer;
 
     opacity: 0;

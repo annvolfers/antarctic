@@ -639,6 +639,7 @@ button,
 .header {
   position: relative;
   z-index: 10;
+  min-height: 105px;
 }
 
 .header__container {
@@ -815,8 +816,8 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 33px;
-  max-width: 60%;
+  gap: 10px 33px;
+  max-width: 65%;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -898,6 +899,39 @@ button,
   opacity: 0.3;
 }
 
+.intro {
+  margin-top: -105px;
+  background-image: -webkit-image-set(url("../img/backgrounds/intro-background-desktop@2x.webp") 2x, url("../img/backgrounds/intro-background-desktop.webp") 1x, url("../img/backgrounds/intro-background-desktop@2x.jpg") 2x, url("../img/backgrounds/intro-background-desktop.jpg") 1x);
+  background-image: image-set(url("../img/backgrounds/intro-background-desktop@2x.webp") 2x, url("../img/backgrounds/intro-background-desktop.webp") 1x, url("../img/backgrounds/intro-background-desktop@2x.jpg") 2x, url("../img/backgrounds/intro-background-desktop.jpg") 1x);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #011c40;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.intro__container {
+  padding: 270px 140px 278px;
+}
+
+.intro__title {
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: 54px;
+  line-height: 66px;
+  color: #f9fbfd;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.intro__description {
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f9fbfd;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -940,6 +974,14 @@ button,
 */
 
 @media (max-width: 1023px) {
+  .container {
+    padding: 0 45px;
+  }
+
+  .header {
+    min-height: 79px;
+  }
+
   .header__container {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -976,7 +1018,7 @@ button,
   }
 
   .footer__link-list {
-    gap: 23px;
+    gap: 10px 23px;
     max-width: 70%;
   }
 
@@ -1007,11 +1049,38 @@ button,
   .footer__social-link--reddit {
     background-size: 16px 16px;
   }
+
+  .intro {
+    margin-top: -79px;
+    background-image: -webkit-image-set(url("../img/backgrounds/intro-background-tablet@2x.webp") 2x, url("../img/backgrounds/intro-background-tablet.webp") 1x, url("../img/backgrounds/intro-background-tablet@2x.jpg") 2x, url("../img/backgrounds/intro-background-tablet.jpg") 1x);
+    background-image: image-set(url("../img/backgrounds/intro-background-tablet@2x.webp") 2x, url("../img/backgrounds/intro-background-tablet.webp") 1x, url("../img/backgrounds/intro-background-tablet@2x.jpg") 2x, url("../img/backgrounds/intro-background-tablet.jpg") 1x);
+    -webkit-filter: none;
+    filter: none;
+  }
+
+  .intro__container {
+    padding-top: 268px;
+    padding-bottom: 275px;
+  }
+
+  .intro__title {
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  .intro__description {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 @media (max-width: 767px) {
   .container {
     padding: 0 15px;
+  }
+
+  .header {
+    min-height: 62px;
   }
 
   .header__container {
@@ -1209,5 +1278,26 @@ button,
     max-width: unset;
     margin-right: 0;
     margin-left: -5px;
+  }
+
+  .intro {
+    margin-top: -62px;
+    background-image: -webkit-image-set(url("../img/backgrounds/intro-background-mobile@2x.webp") 2x, url("../img/backgrounds/intro-background-mobile.webp") 1x, url("../img/backgrounds/intro-background-mobile@2x.jpg") 2x, url("../img/backgrounds/intro-background-mobile.jpg") 1x);
+    background-image: image-set(url("../img/backgrounds/intro-background-mobile@2x.webp") 2x, url("../img/backgrounds/intro-background-mobile.webp") 1x, url("../img/backgrounds/intro-background-mobile@2x.jpg") 2x, url("../img/backgrounds/intro-background-mobile.jpg") 1x);
+  }
+
+  .intro__container {
+    padding-top: 176px;
+    padding-bottom: 178px;
+  }
+
+  .intro__title {
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  .intro__description {
+    padding-right: 60px;
+    font-size: 16px;
   }
 }
