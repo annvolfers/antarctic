@@ -1,0 +1,173 @@
+.features {
+  position: relative;
+  background-color: $color-solitude;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: image-set(url("../img/backgrounds/features-background-desktop@2x.webp") 2x,
+        url("../img/backgrounds/features-background-desktop.webp") 1x,
+        url("../img/backgrounds/features-background-desktop@2x.jpg") 2x,
+        url("../img/backgrounds/features-background-desktop.jpg") 1x);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+
+    @include vp-1023 {
+      background-image: image-set(url("../img/backgrounds/features-background-tablet@2x.webp") 2x,
+          url("../img/backgrounds/features-background-tablet.webp") 1x,
+          url("../img/backgrounds/features-background-tablet@2x.jpg") 2x,
+          url("../img/backgrounds/features-background-tablet.jpg") 1x);
+    }
+
+    @include vp-767 {
+      background-image: image-set(url("../img/backgrounds/features-background-mobile@2x.webp") 2x,
+          url("../img/backgrounds/features-background-mobile.webp") 1x,
+          url("../img/backgrounds/features-background-mobile@2x.jpg") 2x,
+          url("../img/backgrounds/features-background-mobile.jpg") 1x);
+    }
+  }
+}
+
+.features__wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.features__container {
+  padding-top: 110px;
+  padding-bottom: 120px;
+
+  @include vp-1023 {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 56px;
+    padding-bottom: 65px;
+  }
+}
+
+.features h2 {
+  margin: 0;
+  margin-bottom: 49px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+
+  @include vp-1023 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 31px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.features__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @include vp-1023 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features__item {
+  padding: 81px 30px 45px;
+  background-color: $color-alice-blue;
+  background-repeat: no-repeat;
+  background-position: 30px 30px;
+
+  @include vp-1023 {
+    padding: 71px 15px 21px 20px;
+    background-position: 20px 26px;
+  }
+
+  @include vp-767 {
+    padding-right: 22px;
+    background-position: 20px 25px;
+  }
+
+  &--ship {
+    background-image: url("../img/svg/ship.svg");
+    background-size: 27px 32px;
+
+    @include vp-1023 {
+      background-size: 21px 26px;
+    }
+  }
+
+  &--all-in {
+    background-image: url("../img/svg/all-in.svg");
+    background-size: 38px 32px;
+
+    @include vp-1023 {
+      background-size: 27px 26px;
+    }
+  }
+
+  &--zodiac {
+    background-image: url("../img/svg/zodiac.svg");
+    background-size: 44px 32px;
+
+    @include vp-1023 {
+      background-size: 36px 26px;
+    }
+  }
+}
+
+.features h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 18px;
+
+  @include vp-1023 {
+    line-height: 25px;
+  }
+
+  @include vp-767 {
+    padding-right: 54px;
+  }
+}
+
+.features__item--zodiac h3 {
+  @include tablet-only {
+    margin-bottom: 19px;
+  }
+}
+
+.features__br {
+  &--not-desktop {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+    }
+  }
+}
+
+.features p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
