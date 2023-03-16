@@ -637,9 +637,11 @@ button,
 }
 
 .header {
-  position: relative;
+  position: absolute;
   z-index: 10;
-  min-height: 105px;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .header__container {
@@ -693,7 +695,7 @@ button,
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 33px;
+  gap: 10px 33px;
   margin: 0;
   margin-top: 5px;
   padding: 0;
@@ -900,7 +902,6 @@ button,
 }
 
 .intro {
-  margin-top: -105px;
   background-image: -webkit-image-set(url("../img/backgrounds/intro-background-desktop@2x.webp") 2x, url("../img/backgrounds/intro-background-desktop.webp") 1x, url("../img/backgrounds/intro-background-desktop@2x.jpg") 2x, url("../img/backgrounds/intro-background-desktop.jpg") 1x);
   background-image: image-set(url("../img/backgrounds/intro-background-desktop@2x.webp") 2x, url("../img/backgrounds/intro-background-desktop.webp") 1x, url("../img/backgrounds/intro-background-desktop@2x.jpg") 2x, url("../img/backgrounds/intro-background-desktop.jpg") 1x);
   background-repeat: no-repeat;
@@ -968,6 +969,95 @@ button,
   object-fit: contain;
 }
 
+.features {
+  position: relative;
+  background-color: #e3ecf6;
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-image-set(url("../img/backgrounds/features-background-desktop@2x.webp") 2x, url("../img/backgrounds/features-background-desktop.webp") 1x, url("../img/backgrounds/features-background-desktop@2x.jpg") 2x, url("../img/backgrounds/features-background-desktop.jpg") 1x);
+  background-image: image-set(url("../img/backgrounds/features-background-desktop@2x.webp") 2x, url("../img/backgrounds/features-background-desktop.webp") 1x, url("../img/backgrounds/features-background-desktop@2x.jpg") 2x, url("../img/backgrounds/features-background-desktop.jpg") 1x);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+}
+
+.features__wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.features__container {
+  padding-top: 110px;
+  padding-bottom: 120px;
+}
+
+.features h2 {
+  margin: 0;
+  margin-bottom: 49px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+}
+
+.features__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.features__item {
+  padding: 81px 30px 45px;
+  background-color: #f9fbfd;
+  background-repeat: no-repeat;
+  background-position: 30px 30px;
+}
+
+.features__item--ship {
+  background-image: url("../img/svg/ship.svg");
+  background-size: 27px 32px;
+}
+
+.features__item--all-in {
+  background-image: url("../img/svg/all-in.svg");
+  background-size: 38px 32px;
+}
+
+.features__item--zodiac {
+  background-image: url("../img/svg/zodiac.svg");
+  background-size: 44px 32px;
+}
+
+.features h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.features__br--not-desktop {
+  display: none;
+}
+
+.features p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -1014,10 +1104,6 @@ button,
     padding: 0 45px;
   }
 
-  .header {
-    min-height: 79px;
-  }
-
   .header__container {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1031,7 +1117,7 @@ button,
   }
 
   .header__list {
-    gap: 24px;
+    gap: 10px 24px;
     margin-top: 2px;
   }
 
@@ -1087,7 +1173,6 @@ button,
   }
 
   .intro {
-    margin-top: -79px;
     background-image: -webkit-image-set(url("../img/backgrounds/intro-background-tablet@2x.webp") 2x, url("../img/backgrounds/intro-background-tablet.webp") 1x, url("../img/backgrounds/intro-background-tablet@2x.jpg") 2x, url("../img/backgrounds/intro-background-tablet.jpg") 1x);
     background-image: image-set(url("../img/backgrounds/intro-background-tablet@2x.webp") 2x, url("../img/backgrounds/intro-background-tablet.webp") 1x, url("../img/backgrounds/intro-background-tablet@2x.jpg") 2x, url("../img/backgrounds/intro-background-tablet.jpg") 1x);
     -webkit-filter: none;
@@ -1130,15 +1215,55 @@ button,
   .journey img {
     margin-top: 10px;
   }
+
+  .features::before {
+    background-image: -webkit-image-set(url("../img/backgrounds/features-background-tablet@2x.webp") 2x, url("../img/backgrounds/features-background-tablet.webp") 1x, url("../img/backgrounds/features-background-tablet@2x.jpg") 2x, url("../img/backgrounds/features-background-tablet.jpg") 1x);
+    background-image: image-set(url("../img/backgrounds/features-background-tablet@2x.webp") 2x, url("../img/backgrounds/features-background-tablet.webp") 1x, url("../img/backgrounds/features-background-tablet@2x.jpg") 2x, url("../img/backgrounds/features-background-tablet.jpg") 1x);
+  }
+
+  .features__container {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .features h2 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  .features__list {
+    gap: 30px;
+  }
+
+  .features__item {
+    padding: 71px 15px 21px 20px;
+    background-position: 20px 26px;
+  }
+
+  .features__item--ship {
+    background-size: 21px 26px;
+  }
+
+  .features__item--all-in {
+    background-size: 27px 26px;
+  }
+
+  .features__item--zodiac {
+    background-size: 36px 26px;
+  }
+
+  .features h3 {
+    line-height: 25px;
+  }
+
+  .features__br--not-desktop {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) {
   .container {
     padding: 0 15px;
-  }
-
-  .header {
-    min-height: 62px;
   }
 
   .header__container {
@@ -1339,7 +1464,6 @@ button,
   }
 
   .intro {
-    margin-top: -62px;
     background-image: -webkit-image-set(url("../img/backgrounds/intro-background-mobile@2x.webp") 2x, url("../img/backgrounds/intro-background-mobile.webp") 1x, url("../img/backgrounds/intro-background-mobile@2x.jpg") 2x, url("../img/backgrounds/intro-background-mobile.jpg") 1x);
     background-image: image-set(url("../img/backgrounds/intro-background-mobile@2x.webp") 2x, url("../img/backgrounds/intro-background-mobile.webp") 1x, url("../img/backgrounds/intro-background-mobile@2x.jpg") 2x, url("../img/backgrounds/intro-background-mobile.jpg") 1x);
   }
@@ -1375,5 +1499,41 @@ button,
 
   .journey img {
     margin-top: 0;
+  }
+
+  .features::before {
+    background-image: -webkit-image-set(url("../img/backgrounds/features-background-mobile@2x.webp") 2x, url("../img/backgrounds/features-background-mobile.webp") 1x, url("../img/backgrounds/features-background-mobile@2x.jpg") 2x, url("../img/backgrounds/features-background-mobile.jpg") 1x);
+    background-image: image-set(url("../img/backgrounds/features-background-mobile@2x.webp") 2x, url("../img/backgrounds/features-background-mobile.webp") 1x, url("../img/backgrounds/features-background-mobile@2x.jpg") 2x, url("../img/backgrounds/features-background-mobile.jpg") 1x);
+  }
+
+  .features__container {
+    padding-top: 56px;
+    padding-bottom: 65px;
+  }
+
+  .features h2 {
+    margin-bottom: 31px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .features__list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .features__item {
+    padding-right: 22px;
+    background-position: 20px 25px;
+  }
+
+  .features h3 {
+    padding-right: 54px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .features__item--zodiac h3 {
+    margin-bottom: 19px;
   }
 }
