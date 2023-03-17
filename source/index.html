@@ -2,9 +2,9 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Круизы в Антарктику - путешествие на край Земли">
   <title>Круизы в Антарктику</title>
   <link rel="stylesheet" href="./css/style.min.css">
@@ -27,16 +27,16 @@
           <div class="header__list-wrapper">
             <ul class="header__list" data-list>
               <li>
-                <a href="#" class="header__link">Преимущества</a>
+                <a href="#features" class="header__link">Преимущества</a>
               </li>
               <li>
-                <a href="#" class="header__link">Направления</a>
+                <a href="destinations.html" class="header__link">Направления</a>
               </li>
               <li>
-                <a href="#" class="header__link">Ближайшие круизы</a>
+                <a href="#catalog" class="header__link">Ближайшие круизы</a>
               </li>
               <li>
-                <a href="#" class="header__link">Контакты</a>
+                <a href="#contacts" class="header__link">Контакты</a>
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@
         </picture>
       </section>
 
-      <section class="features">
+      <section class="features" id="features">
         <div class="features__wrapper">
           <div class="features__container container">
             <h2>Преимущества</h2>
@@ -105,7 +105,7 @@
         </div>
       </section>
 
-      <section class="catalog container">
+      <section class="catalog container" id="catalog">
         <h2>Ближайшие круизы</h2>
         <ul class="catalog__list">
           <li class="catalog__item">
@@ -377,9 +377,11 @@
         </div>
       </section>
 
-      <section class="contacts container">
+      <section class="contacts container" id="contacts">
         <div class="contacts__map" id="map"></div>
-        <h2 class="contacts__title">У&nbsp;вас ещё остались вопросы или сомнения? <br>Приезжайте к&nbsp;нам в&nbsp;офис и&nbsp;мы&nbsp;вам все расскажем.</h2>
+        <h2 class="visually-hidden">Контакты.</h2>
+        <p class="contacts__title">У&nbsp;вас ещё остались вопросы или сомнения? <br>Приезжайте к&nbsp;нам в&nbsp;офис
+          и&nbsp;мы&nbsp;вам все расскажем.</p>
         <address class="contacts__list">
           <p class="contacts__address">г. Санкт Петербург,<br> ул. Большая Конюшенная, 19/8</p>
           <a class="contacts__phone" href="tel:+78002000000">8-800-200-00-00</a>
@@ -427,8 +429,7 @@
     </footer>
   </div>
 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=44c16b4c-deb2-4f06-b4a5-f65d004179aa&lang=ru_RU"
-    type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=44c16b4c-deb2-4f06-b4a5-f65d004179aa&lang=ru_RU"></script>
   <script src="./js/vendor.min.js"></script>
   <script src="./js/main.min.js"></script>
 </body>
