@@ -80,7 +80,8 @@
     padding: 46px 25px 18px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     flex-direction: column;
     align-items: flex-start;
     padding: 29px 25px 35px;
@@ -111,7 +112,8 @@
   background-color: $color-tangaroa;
 }
 
-.catalog__item:hover img {
+.catalog__item:hover img,
+.catalog__item:focus-within img {
   @include visually-hidden;
 }
 
@@ -128,7 +130,7 @@
   margin: 13px 0 0;
 }
 
-.catalog__item:not(.catalog__item:hover) dl {
+.catalog__item:not(.catalog__item:hover):not(.catalog__item:focus-within) dl {
   @include visually-hidden;
 }
 
@@ -175,6 +177,6 @@
   }
 }
 
-.catalog__item:not(.catalog__item:hover) .catalog__item-button {
+.catalog__item:not(.catalog__item:hover):not(.catalog__item:focus-within) .catalog__item-button {
   @include visually-hidden;
 }

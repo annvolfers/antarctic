@@ -1,0 +1,158 @@
+.form {
+  display: grid;
+  gap: 20px;
+  max-width: 403px;
+  padding: 44px 50px 50px;
+  background-color: $color-tangaroa;
+  box-shadow: 0 4px 45px $color-tangaroa--15;
+
+  @include vp-767 {
+    padding: 35px 30px 40px;
+  }
+}
+
+.form p {
+  margin: 0;
+  margin-bottom: 7px;
+  font-weight: 500;
+  color: $color-alice-blue;
+
+  @include vp-767 {
+    margin-bottom: 8px;
+    line-height: 25px;
+    text-align: center;
+  }
+}
+
+.form input {
+  width: 100%;
+  padding: 11px 16px;
+  font-size: 14px;
+  line-height: 21px;
+  background-color: $color-alice-blue;
+  color: $color-tangaroa;
+  border: none;
+
+  &::placeholder {
+    color: $color-tangaroa--70;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid $color-alice-blue;
+    outline-offset: 4px;
+  }
+}
+
+.form input[aria-invalid="true"] {
+  color: $color-red;
+
+  &::placeholder {
+    color: $color-red;
+  }
+}
+
+.form__checkbox label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+
+  @include vp-767 {
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.form__checkbox-mark {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  background-color: $color-alice-blue;
+
+  @include vp-767 {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.form__checkbox input:checked + .form__checkbox-mark {
+  background-image: url("../img/svg/check.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 6px;
+  background-position: center;
+}
+
+.form__checkbox input:hover + .form__checkbox-mark {
+  opacity: 0.8;
+}
+
+.form__checkbox input:focus + .form__checkbox-mark {
+  outline: 2px solid $color-alice-blue;
+  outline-offset: 2px;
+}
+
+.form__checkbox-label {
+  font-size: 10px;
+  line-height: 13px;
+  color: $color-alice-blue;
+
+  @include vp-767 {
+    line-height: 12px;
+  }
+}
+
+.form__checkbox input:hover ~ .form__checkbox-label {
+  opacity: 0.8;
+}
+
+.form__checkbox.is-invalid .form__checkbox-label {
+  color: $color-red--80;
+}
+
+.form__checkbox-label br {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.form__button {
+  margin-top: 10px;
+  padding: 11px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-tangaroa;
+  border: none;
+  background-color: $color-alice-blue;
+  cursor: pointer;
+
+  @include vp-767 {
+    margin-top: 6px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-alice-blue;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:disabled {
+    background-color: $color-gray;
+    cursor: default;
+    pointer-events: none;
+  }
+}
