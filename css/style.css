@@ -636,6 +636,30 @@ button,
   padding: 0 45px;
 }
 
+.button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #011c40;
+  background-color: #f9fbfd;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid #f9fbfd;
+  outline-offset: 4px;
+}
+
+.button:active {
+  opacity: 0.3;
+}
+
 .header {
   position: absolute;
   z-index: 10;
@@ -980,12 +1004,9 @@ button,
   opacity: 0.1;
 }
 
-.features__wrapper {
+.features__container {
   position: relative;
   z-index: 1;
-}
-
-.features__container {
   padding-top: 110px;
   padding-bottom: 120px;
 }
@@ -1196,26 +1217,11 @@ button,
 .catalog__item-button {
   width: 100%;
   padding: 9px 20px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
   margin-top: auto;
-  color: #011c40;
-  text-align: center;
-  background-color: #f9fbfd;
 }
 
 .catalog__item-button:hover {
   opacity: 0.6;
-}
-
-.catalog__item-button:focus-visible {
-  outline: 2px solid #f9fbfd;
-  outline-offset: 4px;
-}
-
-.catalog__item-button:active {
-  opacity: 0.3;
 }
 
 .catalog__item:not(.catalog__item:hover):not(.catalog__item:focus-within) .catalog__item-button {
@@ -1321,27 +1327,7 @@ button,
 }
 
 .form input[aria-invalid=true] {
-  color: #ff0000;
-}
-
-.form input[aria-invalid=true]::-webkit-input-placeholder {
-  color: #ff0000;
-}
-
-.form input[aria-invalid=true]::-moz-placeholder {
-  color: #ff0000;
-}
-
-.form input[aria-invalid=true]:-ms-input-placeholder {
-  color: #ff0000;
-}
-
-.form input[aria-invalid=true]::-ms-input-placeholder {
-  color: #ff0000;
-}
-
-.form input[aria-invalid=true]::placeholder {
-  color: #ff0000;
+  background-color: #df9191;
 }
 
 .form__checkbox label {
@@ -1380,6 +1366,10 @@ button,
   outline-offset: 2px;
 }
 
+.form__checkbox.is-invalid .form__checkbox-mark {
+  background-color: #df9191;
+}
+
 .form__checkbox-label {
   font-size: 10px;
   line-height: 13px;
@@ -1391,7 +1381,7 @@ button,
 }
 
 .form__checkbox.is-invalid .form__checkbox-label {
-  color: rgba(255, 0, 0, 0.8);
+  color: #df9191;
 }
 
 .form__checkbox-label br {
@@ -1401,26 +1391,10 @@ button,
 .form__button {
   margin-top: 10px;
   padding: 11px 20px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
-  color: #011c40;
-  border: none;
-  background-color: #f9fbfd;
-  cursor: pointer;
 }
 
 .form__button:hover {
   opacity: 0.8;
-}
-
-.form__button:focus-visible {
-  outline: 2px solid #f9fbfd;
-  outline-offset: 4px;
-}
-
-.form__button:active {
-  opacity: 0.3;
 }
 
 .form__button:disabled {
@@ -1450,6 +1424,11 @@ button,
   align-self: center;
   width: 100%;
   height: 306px;
+  background-image: -webkit-image-set(url("../img/map/map-desktop@2x.webp") 2x, url("../img/map/map-desktop.webp") 1x, url("../img/map/map-desktop@2x.png") 2x, url("../img/map/map-desktop.png") 1x);
+  background-image: image-set(url("../img/map/map-desktop@2x.webp") 2x, url("../img/map/map-desktop.webp") 1x, url("../img/map/map-desktop@2x.png") 2x, url("../img/map/map-desktop.png") 1x);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 .contacts__title {
@@ -1778,7 +1757,7 @@ button,
   .booking__container {
     justify-items: center;
     padding-top: 88px;
-    padding-bottom: 99px;
+    padding-bottom: 100px;
   }
 
   .booking__title {
@@ -1803,18 +1782,24 @@ button,
 
   .contacts__map {
     height: 335px;
+    background-image: -webkit-image-set(url("../img/map/map-tablet@2x.webp") 2x, url("../img/map/map-tablet.webp") 1x, url("../img/map/map-tablet@2x.png") 2x, url("../img/map/map-tablet.png") 1x);
+    background-image: image-set(url("../img/map/map-tablet@2x.webp") 2x, url("../img/map/map-tablet.webp") 1x, url("../img/map/map-tablet@2x.png") 2x, url("../img/map/map-tablet.png") 1x);
   }
 
   .contacts__title {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 
   .contacts__title br {
     display: none;
   }
 
+  .contacts__list {
+    margin-top: 6px;
+  }
+
   .contacts__address {
-    background-position: 0 3px;
+    background-position: 0 5px;
   }
 
   .contacts__address br {
@@ -2109,7 +2094,7 @@ button,
 
   .booking__container {
     padding-top: 59px;
-    padding-bottom: 64px;
+    padding-bottom: 65px;
   }
 
   .booking__title {
@@ -2172,7 +2157,7 @@ button,
     -ms-grid-rows: auto;
     grid-template-rows: auto;
     gap: 28px;
-    padding-top: 59px;
+    padding-top: 58px;
     padding-bottom: 65px;
   }
 
@@ -2183,6 +2168,8 @@ button,
     -ms-flex-order: 1;
     order: 1;
     height: 316px;
+    background-image: -webkit-image-set(url("../img/map/map-mobile@2x.webp") 2x, url("../img/map/map-mobile.webp") 1x, url("../img/map/map-mobile@2x.png") 2x, url("../img/map/map-mobile.png") 1x);
+    background-image: image-set(url("../img/map/map-mobile@2x.webp") 2x, url("../img/map/map-mobile.webp") 1x, url("../img/map/map-mobile@2x.png") 2x, url("../img/map/map-mobile.png") 1x);
   }
 
   .contacts__title {
@@ -2195,7 +2182,7 @@ button,
   }
 
   .contacts__phone {
-    background-position: 0 3px;
+    background-position: 0 1px;
   }
 }
 
