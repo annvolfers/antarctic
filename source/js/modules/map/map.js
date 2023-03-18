@@ -12,22 +12,28 @@ export class Map {
   }
 
   init() {
-    ymaps.ready(() => {
-      const myMap = new ymaps.Map('map', {
-        center: [this.CenterCoordinates.LAT, this.CenterCoordinates.LNG],
-        zoom: this.mapZoom,
-      });
+    const script = document.createElement('script');
+    script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+    document.body.appendChild(script);
 
-      const myPlacemark = new ymaps.Placemark([this.MarkerCoordinates.LAT, this.MarkerCoordinates.LNG], {
-        hintContent: 'г. Санкт Петербург, ул. Большая Конюшенная, 19/8',
-      }, {
-        iconLayout: 'default#image',
-        iconImageHref: './img/svg/map-marker.svg',
-        iconImageSize: [18, 22],
-        iconImageOffset: [-9, -22],
-      });
+    script.addEventListener('load', () => {
+      ymaps.ready(() => {
+        const myMap = new ymaps.Map('map', {
+          center: [this.CenterCoordinates.LAT, this.CenterCoordinates.LNG],
+          zoom: this.mapZoom,
+        });
 
-      myMap.geoObjects.add(myPlacemark);
+        const myPlacemark = new ymaps.Placemark([this.MarkerCoordinates.LAT, this.MarkerCoordinates.LNG], {
+          hintContent: 'г. Санкт Петербург, ул. Большая Конюшенная, 19/8',
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: './img/svg/map-marker.svg',
+          iconImageSize: [18, 22],
+          iconImageOffset: [-9, -22],
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+      });
     });
   }
 }
