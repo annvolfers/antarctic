@@ -1,5 +1,6 @@
 export class Map {
   constructor() {
+    this.map = document.querySelector('#map');
     this.CenterCoordinates = {
       LAT: 59.938609,
       LNG: 30.323075,
@@ -12,6 +13,10 @@ export class Map {
   }
 
   init() {
+    if (!this.map) {
+      return;
+    }
+
     const script = document.createElement('script');
     script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
     document.body.appendChild(script);

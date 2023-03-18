@@ -48,11 +48,7 @@
 }
 
 .form input[aria-invalid="true"] {
-  color: $color-red;
-
-  &::placeholder {
-    color: $color-red;
-  }
+  background-color: $color-petite-orchid;
 }
 
 .form__checkbox label {
@@ -96,6 +92,10 @@
   outline-offset: 2px;
 }
 
+.form__checkbox.is-invalid .form__checkbox-mark {
+  background-color: $color-petite-orchid;
+}
+
 .form__checkbox-label {
   font-size: 10px;
   line-height: 13px;
@@ -111,7 +111,7 @@
 }
 
 .form__checkbox.is-invalid .form__checkbox-label {
-  color: $color-red--80;
+  color: $color-petite-orchid;
 }
 
 .form__checkbox-label br {
@@ -125,13 +125,6 @@
 .form__button {
   margin-top: 10px;
   padding: 11px 20px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
-  color: $color-tangaroa;
-  border: none;
-  background-color: $color-alice-blue;
-  cursor: pointer;
 
   @include vp-767 {
     margin-top: 6px;
@@ -139,15 +132,6 @@
 
   &:hover {
     opacity: 0.8;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-alice-blue;
-    outline-offset: 4px;
-  }
-
-  &:active {
-    opacity: 0.3;
   }
 
   &:disabled {

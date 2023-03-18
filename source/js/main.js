@@ -1,6 +1,5 @@
 import {Burger} from './modules/header/burger';
 import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {Map} from './modules/map/map';
 
@@ -21,7 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     const burger = new Burger();
     burger.init();
-    initModals();
     const form = new Form();
     window.form = form;
     form.init();

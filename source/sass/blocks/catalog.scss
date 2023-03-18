@@ -155,25 +155,10 @@
 .catalog__item-button {
   width: 100%;
   padding: 9px 20px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
   margin-top: auto;
-  color: $color-tangaroa;
-  text-align: center;
-  background-color: $color-alice-blue;
 
   &:hover {
     opacity: 0.6;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-alice-blue;
-    outline-offset: 4px;
-  }
-
-  &:active {
-    opacity: 0.3;
   }
 }
 

@@ -1,0 +1,20 @@
+.button {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-tangaroa;
+  background-color: $color-alice-blue;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+  &:focus-visible {
+    outline: 2px solid $color-alice-blue;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

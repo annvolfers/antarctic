@@ -17,7 +17,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 28px;
-    padding-top: 59px;
+    padding-top: 58px;
     padding-bottom: 65px;
   }
 }
@@ -28,9 +28,20 @@
   align-self: center;
   width: 100%;
   height: 306px;
+  background-image: image-set(url("../img/map/map-desktop@2x.webp") 2x,
+      url("../img/map/map-desktop.webp") 1x,
+      url("../img/map/map-desktop@2x.png") 2x,
+      url("../img/map/map-desktop.png") 1x);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
 
   @include vp-1023 {
     height: 335px;
+    background-image: image-set(url("../img/map/map-tablet@2x.webp") 2x,
+        url("../img/map/map-tablet.webp") 1x,
+        url("../img/map/map-tablet@2x.png") 2x,
+        url("../img/map/map-tablet.png") 1x);
   }
 
   @include vp-767 {
@@ -38,6 +49,10 @@
     grid-row: unset;
     order: 1;
     height: 316px;
+    background-image: image-set(url("../img/map/map-mobile@2x.webp") 2x,
+        url("../img/map/map-mobile.webp") 1x,
+        url("../img/map/map-mobile@2x.png") 2x,
+        url("../img/map/map-mobile.png") 1x);
   }
 }
 
@@ -49,7 +64,7 @@
   font-size: 18px;
 
   @include vp-1023 {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 
   @include vp-767 {
@@ -66,6 +81,10 @@
 .contacts__list {
   margin-top: 8px;
   font-style: normal;
+
+  @include vp-1023 {
+    margin-top: 6px;
+  }
 
   @include vp-767 {
     margin-top: 0;
@@ -85,7 +104,7 @@
   background-position: 0 0;
 
   @include vp-1023 {
-    background-position: 0 3px;
+    background-position: 0 5px;
   }
 }
 
@@ -108,7 +127,7 @@
   background-position: 0 3px;
 
   @include vp-767 {
-    background-position: 0 3px;
+    background-position: 0 1px;
   }
 
   &:hover {
