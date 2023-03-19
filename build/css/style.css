@@ -1260,12 +1260,13 @@ button,
   line-height: 60px;
 }
 
-.booking__text {
+.booking__container > p {
   margin: 0;
   margin-top: 4px;
+  padding-right: 146px;
 }
 
-.booking__br--mobile {
+.booking__container br {
   display: none;
 }
 
@@ -1384,10 +1385,6 @@ button,
   color: #df9191;
 }
 
-.form__checkbox-label br {
-  display: none;
-}
-
 .form__button {
   margin-top: 10px;
   padding: 11px 20px;
@@ -1431,7 +1428,7 @@ button,
   background-position: center bottom;
 }
 
-.contacts__title {
+.contacts > p {
   -ms-flex-item-align: self-end;
   -ms-grid-row-align: self-end;
   align-self: self-end;
@@ -1550,7 +1547,7 @@ button,
     align-self: self-end;
   }
 
-  .booking__text {
+  .booking__container > p {
     -ms-flex-item-align: self-start;
     -ms-grid-row-align: self-start;
     align-self: self-start;
@@ -1767,8 +1764,9 @@ button,
     text-align: center;
   }
 
-  .booking__text {
+  .booking__container > p {
     margin-bottom: 52px;
+    padding: 0 144px;
     text-align: center;
   }
 
@@ -1786,11 +1784,11 @@ button,
     background-image: image-set(url("../img/map/map-tablet@2x.webp") 2x, url("../img/map/map-tablet.webp") 1x, url("../img/map/map-tablet@2x.png") 2x, url("../img/map/map-tablet.png") 1x);
   }
 
-  .contacts__title {
+  .contacts > p {
     margin-bottom: 21px;
   }
 
-  .contacts__title br {
+  .contacts br {
     display: none;
   }
 
@@ -2103,17 +2101,14 @@ button,
     line-height: 31px;
   }
 
-  .booking__text {
+  .booking__container > p {
     margin-bottom: 34px;
+    padding: 0 16px;
     font-size: 16px;
     line-height: 22px;
   }
 
-  .booking__br--not-mobile {
-    display: none;
-  }
-
-  .booking__br--mobile {
+  .booking__container br {
     display: block;
   }
 
@@ -2140,11 +2135,8 @@ button,
   }
 
   .form__checkbox-label {
+    padding-right: 45px;
     line-height: 12px;
-  }
-
-  .form__checkbox-label br {
-    display: block;
   }
 
   .form__button {
@@ -2172,7 +2164,7 @@ button,
     background-image: image-set(url("../img/map/map-mobile@2x.webp") 2x, url("../img/map/map-mobile.webp") 1x, url("../img/map/map-mobile@2x.png") 2x, url("../img/map/map-mobile.png") 1x);
   }
 
-  .contacts__title {
+  .contacts > p {
     margin-bottom: 0;
   }
 
