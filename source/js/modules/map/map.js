@@ -18,7 +18,7 @@ export class Map {
     }
 
     const script = document.createElement('script');
-    script.async = true;
+    script.defer = true;
     script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
     document.body.appendChild(script);
 
