@@ -38,12 +38,6 @@
 
 // Desktop first
 
-@mixin desktop-only {
-  @media (min-width: $vp-1024) {
-    @content;
-  }
-}
-
 @mixin tablet-only {
   @media (min-width: $vp-768) and (max-width: ($vp-1024 - 1px)) {
     @content;
