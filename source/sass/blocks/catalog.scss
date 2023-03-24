@@ -9,7 +9,7 @@
 
   @include vp-767 {
     padding-top: 56px;
-    padding-bottom: 65px;
+    padding-bottom: 66px;
   }
 }
 
@@ -37,7 +37,6 @@
 .catalog__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 386px;
   gap: 30px;
   margin: 0;
   padding: 0 15px;
@@ -49,16 +48,16 @@
 
   @include vp-767 {
     grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 0 10px;
   }
 }
 
 .catalog__item {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 41px 20px 23px 30px;
-  overflow-y: auto;
+  min-height: 0;
+  padding-bottom: 148.5%;
   background-color: $color-tangaroa;
 
   &::before {
@@ -73,28 +72,15 @@
   }
 
   @include vp-1023 {
-    padding: 37px 35px 27px;
+    padding-bottom: 124.9%;
   }
 
   @include vp-767 {
-    padding: 46px 25px 18px;
+    padding-bottom: 142.9%;
   }
 
   &:hover,
   &:focus-within {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 29px 25px 35px;
-    box-shadow: 0 4px 35px $color-tangaroa--15;
-
-    @include vp-1023 {
-      padding: 29px 35px 35px;
-    }
-
-    @include vp-767 {
-      padding: 29px 25px 35px;
-    }
-
     &::before {
       display: none;
     }
@@ -115,6 +101,42 @@
 .catalog__item:hover img,
 .catalog__item:focus-within img {
   @include visually-hidden;
+}
+
+.catalog__item-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 41px 20px 23px 30px;
+  overflow-y: auto;
+
+  @include vp-1023 {
+    padding: 37px 35px 27px;
+  }
+
+  @include vp-767 {
+    padding: 46px 25px 18px;
+  }
+}
+
+.catalog__item:hover .catalog__item-content-wrapper,
+.catalog__item:focus-within .catalog__item-content-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 29px 25px 35px;
+  box-shadow: 0 4px 35px $color-tangaroa--15;
+
+  @include vp-1023 {
+    padding: 29px 35px 35px;
+  }
+
+  @include vp-767 {
+    padding: 29px 25px 35px;
+  }
 }
 
 .catalog h3 {
