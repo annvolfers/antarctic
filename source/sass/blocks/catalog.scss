@@ -58,12 +58,11 @@
   position: relative;
   min-height: 0;
   padding-bottom: 148.5%;
-  background-color: $color-tangaroa;
+  overflow-y: hidden;
 
   &::before {
     content: "";
     position: absolute;
-    z-index: 1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -81,9 +80,7 @@
 
   &:hover,
   &:focus-within {
-    &::before {
-      display: none;
-    }
+    box-shadow: 0 4px 35px $color-tangaroa--15;
   }
 }
 
@@ -96,39 +93,49 @@
   display: block;
   object-fit: cover;
   background-color: $color-tangaroa;
-}
-
-.catalog__item:hover img,
-.catalog__item:focus-within img {
-  @include visually-hidden;
+  z-index: -1;
 }
 
 .catalog__item-content-wrapper {
+  --titleHeight: 0;
+  --paddingTop: 41px;
+  --paddingBottom: 23px;
+
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: flex-end;
-  padding: 41px 20px 23px 30px;
-  overflow-y: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--paddingTop) 20px var(--paddingBottom) 30px;
+  transform: translateY(max(calc(100% - var(--titleHeight) - var(--paddingTop) - var(--paddingBottom)), 0px));
+  transition: transform $trans-default, background-color $trans-default, padding $trans-200;
 
   @include vp-1023 {
-    padding: 37px 35px 27px;
+    --paddingTop: 37px;
+    --paddingBottom: 27px;
+
+    padding-right: 35px;
+    padding-left: 35px;
   }
 
   @include vp-767 {
-    padding: 46px 25px 18px;
+    --paddingTop: 46px;
+    --paddingBottom: 18px;
+
+    padding-right: 25px;
+    padding-left: 25px;
   }
 }
 
 .catalog__item:hover .catalog__item-content-wrapper,
 .catalog__item:focus-within .catalog__item-content-wrapper {
-  flex-direction: column;
-  align-items: flex-start;
   padding: 29px 25px 35px;
-  box-shadow: 0 4px 35px $color-tangaroa--15;
+  background-color: $color-tangaroa;
+  overflow-y: auto;
+  transform: translateY(0);
 
   @include vp-1023 {
     padding: 29px 35px 35px;
@@ -139,9 +146,12 @@
   }
 }
 
+.catalog__item:focus-within .catalog__item-content-wrapper {
+  transition: background-color $trans-default, padding $trans-200;
+}
+
 .catalog h3 {
   position: relative;
-  z-index: 3;
   margin: 0;
   font-weight: 500;
   font-size: 18px;
@@ -150,10 +160,19 @@
 
 .catalog dl {
   margin: 13px 0 0;
+  transform: translateY(5px);
+  transition: transform $trans-default, opacity $trans-default;
+  opacity: 0;
+
+  @include vp-1023 {
+    transform: translateY(10px);
+  }
 }
 
-.catalog__item:not(.catalog__item:hover):not(.catalog__item:focus-within) dl {
-  @include visually-hidden;
+.catalog__item:hover dl,
+.catalog__item:focus-within dl {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .catalog dt {
@@ -178,12 +197,9 @@
   width: 100%;
   padding: 9px 20px;
   margin-top: auto;
+  transition: opacity $trans-default;
 
   &:hover {
     opacity: 0.6;
   }
-}
-
-.catalog__item:not(.catalog__item:hover):not(.catalog__item:focus-within) .catalog__item-button {
-  @include visually-hidden;
 }

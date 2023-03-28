@@ -112,6 +112,7 @@
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-position: 0 3px;
+  transition: opacity $trans-default;
 
   @include vp-767 {
     background-position: 0 1px;

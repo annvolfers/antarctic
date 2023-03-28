@@ -26,6 +26,7 @@
 
 .footer__logo-link {
   display: flex;
+  transition: opacity $trans-default;
 
   &:hover {
     opacity: 0.6;
@@ -94,6 +95,7 @@
   font-size: 16px;
   line-height: 20px;
   color: $color-alice-blue;
+  transition: opacity $trans-default;
 
   @include vp-1023 {
     font-size: 12px;
@@ -148,6 +150,7 @@
   height: 30px;
   background-repeat: no-repeat;
   background-position: center;
+  transition: opacity $trans-default;
 
   &--ok {
     width: 22px;

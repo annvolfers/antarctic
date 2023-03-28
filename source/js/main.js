@@ -1,5 +1,6 @@
-import {Burger} from './modules/header/burger';
 import {iosVhFix} from './utils/ios-vh-fix';
+import {Burger} from './modules/header/burger';
+import {Catalog} from './modules/catalog/catalog';
 import {Form} from './modules/form-validate/form';
 import {Map} from './modules/map/map';
 
@@ -20,9 +21,14 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     const burger = new Burger();
     burger.init();
+
+    const catalog = new Catalog();
+    catalog.init();
+
     const form = new Form();
     window.form = form;
     form.init();
+
     const map = new Map();
     map.init();
   });
